@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="430c3775-8f47-494e-816d-7a8bc2f5d3c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DDPG_analyse.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DDPG_critic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DDPG_plus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cartpole_plus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cartpole_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DDPG_Train.py" beforeDir="false" afterPath="$PROJECT_DIR$/DDPG_normal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DDPG_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/DDPG_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cartpole_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/cartpole_env.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,11 +41,13 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="mat" value="1" />
           <entry key="md" value="1" />
           <entry key="py" value="15" />
         </counts>
@@ -60,19 +55,20 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="md" value="405" />
+          <entry key="md" value="754" />
           <entry key="py" value="829" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="405" />
+          <entry key="Markdown" value="754" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="Python" value="829" />
         </counts>
@@ -84,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDPG_normal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1214">
+            <state relative-caret-position="2850">
               <caret line="190" column="21" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
             </state>
           </provider>
@@ -93,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDPG_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="1440">
               <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
             </state>
           </provider>
@@ -102,18 +98,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDPG_plus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="1650">
               <caret line="110" column="76" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="300">
-                <caret line="20" selection-start-line="20" selection-end-line="20" />
+                <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
               </first_editor>
               <second_editor />
             </state>
@@ -123,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cartpole_env.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+            <state relative-caret-position="311">
+              <caret line="100" selection-start-line="100" selection-end-line="102" selection-end-column="53" />
               <folding>
                 <element signature="e#169#180#0" expanded="true" />
               </folding>
@@ -135,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cartpole_plus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="100" selection-start-line="100" selection-end-line="102" selection-end-column="51" />
+            <state relative-caret-position="333">
+              <caret line="103" column="57" lean-forward="true" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
               <folding>
                 <element signature="e#169#180#0" expanded="true" />
               </folding>
@@ -144,11 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDPG_critic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="103" selection-start-line="103" selection-end-line="113" selection-end-column="81" />
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -156,7 +152,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cartpole_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
+            <state relative-caret-position="1650">
               <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
               <folding>
                 <element signature="e#169#180#0" expanded="true" />
@@ -185,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/DDPG_analyse.py" />
         <option value="$PROJECT_DIR$/DDPG_PLUS.py" />
         <option value="$PROJECT_DIR$/DDPG_Train.py" />
@@ -194,8 +189,9 @@
         <option value="$PROJECT_DIR$/DDPG_test.py" />
         <option value="$PROJECT_DIR$/DDPG_plus.py" />
         <option value="$PROJECT_DIR$/cartpole_plus.py" />
-        <option value="$PROJECT_DIR$/cartpole_env.py" />
         <option value="$PROJECT_DIR$/DDPG_critic.py" />
+        <option value="$PROJECT_DIR$/cartpole_env.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -215,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,11 +219,15 @@
               <item name="DDPG_CARTPOLE" type="b2602c69:ProjectViewProjectNode" />
               <item name="DDPG_CARTPOLE" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DDPG_CARTPOLE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DDPG_CARTPOLE" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,9 +382,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="954" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="954" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2985348" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3021978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -420,26 +422,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="300">
-            <caret line="20" selection-start-line="20" selection-end-line="20" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/DDPG_normal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="190" column="21" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDPG_normal.py">
+    <entry file="file://$PROJECT_DIR$/DDPG_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1214">
-          <caret line="190" column="21" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
+        <state relative-caret-position="1440">
+          <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDPG_plus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="110" column="76" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cartpole_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="1650">
           <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
           <folding>
             <element signature="e#169#180#0" expanded="true" />
@@ -447,44 +453,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cartpole_plus.py">
+    <entry file="file://$PROJECT_DIR$/DDPG_critic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="100" selection-start-line="100" selection-end-line="102" selection-end-column="51" />
-          <folding>
-            <element signature="e#169#180#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cartpole_env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+        <state relative-caret-position="311">
+          <caret line="100" selection-start-line="100" selection-end-line="102" selection-end-column="53" />
           <folding>
             <element signature="e#169#180#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDPG_test.py">
+    <entry file="file://$PROJECT_DIR$/QR.mat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cartpole_plus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
+        <state relative-caret-position="333">
+          <caret line="103" column="57" lean-forward="true" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
+          <folding>
+            <element signature="e#169#180#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDPG_plus.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="110" column="76" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DDPG_critic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="103" selection-start-line="103" selection-end-line="113" selection-end-column="81" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="300">
+            <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

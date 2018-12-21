@@ -10,6 +10,15 @@
 -  In every 0.02s, the gravity changes in a gaussian distribution (10,2).
 ## Action uncertainty
 -  And the action the agent chooses will also be added with a gaussian distribution(action,10).
+-  The torch, the acceleration，angular acceleration all add with a gaussian distribution.
+
+## Model
+- cartploe_normal.ckpt train with no uncertainty.
+- cartploe_plus_5.ckpt train with full uncertainty.
+
+## Env
+- cartpole_env.py is without uncertainty environment.
+- cartpole_plus.py is the uncertainty environment.
 
 # Dependencies
 - Tensorflow (1.9.0)
