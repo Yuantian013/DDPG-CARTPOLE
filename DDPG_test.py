@@ -70,8 +70,8 @@ class DDPG(object):
 
         self.sess.run(tf.global_variables_initializer())
         self.saver = tf.train.Saver()
-        self.saver.restore(self.sess, "Model/cartpole_plus_5.ckpt")  # 1 0.1 0.5 0.001
-        # self.saver.restore(self.sess, "Model/cartpole_normal.ckpt")  # 1 0.1 0.5 0.001no r
+        # self.saver.restore(self.sess, "Model/cartpole_plus_5.ckpt")  # 1 0.1 0.5 0.001
+        self.saver.restore(self.sess, "Model/cartpole_normal.ckpt")  # 1 0.1 0.5 0.001no r
     def choose_action(self, s):
         return self.sess.run(self.a, {self.S: s[np.newaxis, :]})[0]
 
