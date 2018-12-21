@@ -70,10 +70,26 @@ class DDPG(object):
 
         self.sess.run(tf.global_variables_initializer())
         self.saver = tf.train.Saver()
-        self.saver.restore(self.sess, "Model/cartpole_plus_5.ckpt")  # 1 0.1 0.5 0.001
-        # self.saver.restore(self.sess, "Model/cartpole_normal.ckpt")  # 1 0.1 0.5 0.001no r
+        # self.saver.restore(self.sess, "Save/cartpole_g10_M1_m0.1_l0.5_tau_0.02.ckpt")  # 1 0.1 0.5 0.001
+
     def choose_action(self, s):
         return self.sess.run(self.a, {self.S: s[np.newaxis, :]})[0]
+
+    def learn(self,LR_A,LR_C):
+        indices = np.random.choice(MEMORY_CAPACITY, size=BATCH_SIZE)
+        bt = self.memory[indices, :]
+        bs = bt[:, :self.s_dim]
+        ba = bt[:, self.s_dim: self.s_dim + self.a_dim]
+        br = bt[:, -self.s_dim - 1: -self.s_dim]
+        bs_ = bt[:, -self.s_dim:]
+        self.sess.run(self.atrain, {self.S: bs,self.LR_A:LR_A})
+        self.sess.run(self.ctrain, {self.S: bs, self.a: ba, self.R: br, self.S_: bs_,self.LR_C:LR_C})
+
+    def store_transition(self, s, a, r, s_):
+        transition = np.hstack((s, a, [r], s_))
+        index = self.pointer % MEMORY_CAPACITY  # replace the old memory with new memory
+        self.memory[index, :] = transition
+        self.pointer += 1
 
     #action 选择模块也是actor模块
     def _build_a(self, s, reuse=None, custom_getter=None):
@@ -94,8 +110,13 @@ class DDPG(object):
             b1 = tf.get_variable('b1', [1, n_l1], trainable=trainable)
             net_0 = tf.nn.relu(tf.matmul(s, w1_s) + tf.matmul(a, w1_a) + b1)
             net_1 = tf.layers.dense(net_0, 128, activation=tf.nn.relu, name='l2', trainable=trainable)  # 原始是30
-            net_2 = tf.layers.dense(net_1, 64, activation=tf.nn.relu, name='l3', trainable=trainable)  # 原始是30
+            # net_2 = tf.layers.dense(net_1, 64, activation=tf.nn.relu, name='l3', trainable=trainable)  # 原始是30
             return tf.layers.dense(net_1, 1, trainable=trainable)  # Q(s,a)
+
+    def save_result(self):
+        # save_path = self.saver.save(self.sess, "Save/cartpole_g10_M1_m0.1_l0.5_tau_0.02.ckpt")
+        save_path = self.saver.save(self.sess, "Model/cartpole_plus_10.ckpt")
+        print("Save to path: ", save_path)
 ###############################  training  ####################################
 # env.seed(1)   # 普通的 Policy gradient 方法, 使得回合的 variance 比较大, 所以我们选了一个好点的随机种子
 
@@ -123,11 +144,21 @@ for i in range(MAX_EPISODES):
             env.render()
 
         # Add exploration noise
-        a = ddpg.choose_action(np.random.normal(s, 0.05))
+        a = ddpg.choose_action(np.random.normal(s, 0.02))
         a = np.clip(np.random.normal(a, var), -a_bound, a_bound)    # add randomness to action selection for exploration
         #if var<0.01:
             #a=np.clip(np.random.normal(a, a_bound), -a_bound, a_bound)
         s_, r, done, hit = env.step(a,i)
+
+        ddpg.store_transition(s, a, r/10, s_)
+
+        if ddpg.pointer > MEMORY_CAPACITY:
+            var *= .999995    # decay the action randomness
+            #var = np.max([var,0.1])
+            # LR_A *= .99995
+            # LR_C *= .99995
+            ddpg.learn(LR_A,LR_C)
+
         s = s_
         ep_reward += r
         if j == MAX_EP_STEPS - 1:
@@ -135,7 +166,34 @@ for i in range(MAX_EPISODES):
             EWMA_reward[0,i+1]=EWMA_p*EWMA_reward[0,i]+(1-EWMA_p)*ep_reward
             #EWMA[0,i+1]=EWMA[0,i+1]/(1-(EWMA_p **(i+1)))
             print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var,"good","EWMA_step = ",EWMA_step[0,i+1],"EWMA_reward = ",EWMA_reward[0,i+1],"LR_A = ",LR_A)
+            # print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var, 'EWMA: %.2f' % EWMA[0, i + 1])
+            # if ep_reward > -20:RENDER = True # 当 回合总 reward 大于 300 时显示模拟窗口
+            #if var <= 0.1:RENDER = True # 当 回合总 reward 大于 300 时显示模拟窗口
+            #if i > 4990: RENDER = True  # 当 回合总 reward 大于 300 时显示模拟窗口
+            win=win+1
+            # if win>winmax:
+            #     ddpg.save_result()
+            #     winmax = win
+            #     LR_A *= .9  # learning rate for actor
+            #     LR_C *= .95  # learning rate for critic
+            #     ddpg.save_result()
+            # break
+            if EWMA_reward[0,i+1]>max_ewma_reward:
+                max_ewma_reward=EWMA_reward[0,i+1]
+                LR_A *= .9  # learning rate for actor
+                LR_C *= .95  # learning rate for critic
+                ddpg.save_result()
 
+            if ep_reward> max_reward:
+                max_reward = ep_reward
+                LR_A *= .9  # learning rate for actor
+                LR_C *= .95  # learning rate for critic
+                ddpg.save_result()
+                print("max_reward : ",ep_reward)
+            else:
+                LR_A *= .995
+                LR_C *= .999
+            break
 
         elif done:
             EWMA_step[0,i+1]=EWMA_p*EWMA_step[0,i]+(1-EWMA_p)*j

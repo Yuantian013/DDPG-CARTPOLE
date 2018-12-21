@@ -104,14 +104,14 @@ class CartPoleEnv_adv(gym.Env):
         self.total_mass = (self.masspole + self.masscart)
         state = self.state
         x, x_dot, theta, theta_dot = state
-        force = action
+        force = np.random.normal(action, 5)
         # force = action
         costheta = math.cos(theta)
         sintheta = math.sin(theta)
-        temp = np.random.normal((force + self.polemass_length * theta_dot * theta_dot * sintheta) / self.total_mass,0)
+        temp = np.random.normal((force + self.polemass_length * theta_dot * theta_dot * sintheta) / self.total_mass,5)
         thetaacc = np.random.normal((self.gravity * sintheta - costheta * temp) / (
-                    self.length * (4.0 / 3.0 - self.masspole * costheta * costheta / self.total_mass)),0)
-        xacc = np.random.normal(temp - self.polemass_length * thetaacc * costheta / self.total_mass,0)
+                    self.length * (4.0 / 3.0 - self.masspole * costheta * costheta / self.total_mass)),2)
+        xacc = np.random.normal(temp - self.polemass_length * thetaacc * costheta / self.total_mass,2)
         if self.kinematics_integrator == 'euler':
             x = x + self.tau * x_dot
             x_dot = x_dot + self.tau * xacc

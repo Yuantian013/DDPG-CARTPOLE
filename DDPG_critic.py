@@ -11,8 +11,8 @@ from cartpole_env import CartPoleEnv_adv
 
 MAX_EPISODES = 50000
 MAX_EP_STEPS =2500
-LR_A = 0.0025    # learning rate for actor
-LR_C = 0.005    # learning rate for critic
+LR_A = 0.001    # learning rate for actor
+LR_C = 0.0025    # learning rate for critic
 GAMMA = 0.99    # reward discount
 TAU = 0.01  # soft replacement
 MEMORY_CAPACITY = 50000
@@ -96,8 +96,9 @@ class DDPG(object):
         trainable = True if reuse is None else False
         with tf.variable_scope('Actor', reuse=reuse, custom_getter=custom_getter):
             net_0 = tf.layers.dense(s, 128, activation=tf.nn.relu, name='l1', trainable=trainable)#原始是30
-            # net_1 = tf.layers.dense(net_0, 128, activation=tf.nn.relu, name='l2', trainable=trainable)  # 原始是30
-            a = tf.layers.dense(net_0, self.a_dim, activation=tf.nn.tanh, name='a', trainable=trainable)
+            net_1 = tf.layers.dense(net_0, 128, activation=tf.nn.relu, name='l2', trainable=trainable)  # 原始是30
+            net_2 = tf.layers.dense(net_1, 64, activation=tf.nn.relu, name='l3', trainable=trainable)  # 原始是30
+            a = tf.layers.dense(net_2, self.a_dim, activation=tf.nn.tanh, name='a', trainable=trainable)
             return tf.multiply(a, self.a_bound, name='scaled_a')
     #critic模块
     def _build_c(self, s, a, reuse=None, custom_getter=None):
@@ -107,13 +108,14 @@ class DDPG(object):
             w1_s = tf.get_variable('w1_s', [self.s_dim, n_l1], trainable=trainable)
             w1_a = tf.get_variable('w1_a', [self.a_dim, n_l1], trainable=trainable)
             b1 = tf.get_variable('b1', [1, n_l1], trainable=trainable)
-            net_0 = tf.nn.relu(tf.matmul(s, w1_s) + tf.matmul(a, w1_a) + b1)
-            # net_1 = tf.layers.dense(net_0, 128, activation=tf.nn.relu, name='l2', trainable=trainable)  # 原始是30
-            return tf.layers.dense(net_0, 1, trainable=trainable)  # Q(s,a)
+            b2 = tf.get_variable('b2', [1, n_l1], trainable=trainable)
+            net_s = tf.nn.relu(tf.matmul(s, w1_s) + b1)
+            net_0 = tf.nn.relu(tf.matmul(s, w1_s) + tf.matmul(a, w1_a) + b2)
+            return tf.layers.dense(net_0+net_s, 1, trainable=trainable)  # Q(s,a)
 
     def save_result(self):
         # save_path = self.saver.save(self.sess, "Save/cartpole_g10_M1_m0.1_l0.5_tau_0.02.ckpt")
-        save_path = self.saver.save(self.sess, "Test_Model/cartpole_g10_M1_m0.1_l0.5_tau_0.02_final.ckpt")
+        save_path = self.saver.save(self.sess, "Model/cartpole_critic_without_b3.ckpt")
         print("Save to path: ", save_path)
 ###############################  training  ####################################
 # env.seed(1)   # 普通的 Policy gradient 方法, 使得回合的 variance 比较大, 所以我们选了一个好点的随机种子
@@ -151,7 +153,7 @@ for i in range(MAX_EPISODES):
         ddpg.store_transition(s, a, r/10, s_)
 
         if ddpg.pointer > MEMORY_CAPACITY:
-            var *= .9999995    # decay the action randomness
+            var *= .999995    # decay the action randomness
             #var = np.max([var,0.1])
             # LR_A *= .99995
             # LR_C *= .99995

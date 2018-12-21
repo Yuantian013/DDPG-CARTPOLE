@@ -98,14 +98,14 @@ class CartPoleEnv_adv(gym.Env):
 
     def step(self, action, i):
         a = 0
-        self.gravity = np.random.normal(10, 2)
-        self.masscart = np.random.normal(1, 0.2)
-        self.masspole = np.random.normal(0.1, 0.02)
+        # self.gravity = np.random.normal(10, 2)
+        # self.masscart = np.random.normal(1, 0.2)
+        # self.masspole = np.random.normal(0.1, 0.02)
         self.total_mass = (self.masspole + self.masscart)
         state = self.state
         x, x_dot, theta, theta_dot = state
+        force = np.random.normal(action, 5)
         force = action
-        # force = action
         costheta = math.cos(theta)
         sintheta = math.sin(theta)
         temp = np.random.normal((force + self.polemass_length * theta_dot * theta_dot * sintheta) / self.total_mass,0)
