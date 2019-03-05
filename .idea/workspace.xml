@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="430c3775-8f47-494e-816d-7a8bc2f5d3c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DDPG_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/DDPG_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDPG_normal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDPG_plus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDPG_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/cartpole_normal.ckpt.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/Model/cartpole_normal.ckpt.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/cartpole_normal.ckpt.index" beforeDir="false" afterPath="$PROJECT_DIR$/Model/cartpole_normal.ckpt.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/cartpole_normal.ckpt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Model/cartpole_normal.ckpt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/Model/checkpoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartpole_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartpole_plus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartpole_test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +22,12 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$Analyse.coverage" NAME="Analyse Coverage Results" MODIFIED="1545235390406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG_normal.coverage" NAME="DDPG_normal Coverage Results" MODIFIED="1545304365285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG_normal.coverage" NAME="DDPG_normal Coverage Results" MODIFIED="1546955284493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG_plus.coverage" NAME="DDPG_plus Coverage Results" MODIFIED="1545325284448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG_PLUS.coverage" NAME="DDPG_PLUS Coverage Results" MODIFIED="1545235020918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG_critic.coverage" NAME="DDPG_critic Coverage Results" MODIFIED="1545338710128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG.coverage" NAME="DDPG Coverage Results" MODIFIED="1545235723075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG_TEST.coverage" NAME="DDPG_TEST Coverage Results" MODIFIED="1545389348752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DDPG_CARTPOLE$DDPG_TEST.coverage" NAME="DDPG_TEST Coverage Results" MODIFIED="1546947475600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -38,52 +47,86 @@
     <session id="2010076050">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="mat" value="1" />
           <entry key="md" value="1" />
-          <entry key="py" value="16" />
+          <entry key="py" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="16" />
+          <entry key="Python" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
           <entry key="md" value="754" />
-          <entry key="py" value="829" />
+          <entry key="py" value="840" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="754" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="829" />
+          <entry key="Python" value="840" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDPG_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+            <state relative-caret-position="1890">
+              <caret line="126" column="51" selection-start-line="126" selection-start-column="51" selection-end-line="126" selection-end-column="51" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DDPG_normal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DDPG_analyse.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1605">
+              <caret line="107" column="90" selection-end-line="140" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cartpole_plus.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cartpole_env.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DDPG_plus.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -109,14 +152,15 @@
         <option value="$PROJECT_DIR$/DDPG_analyse.py" />
         <option value="$PROJECT_DIR$/DDPG_PLUS.py" />
         <option value="$PROJECT_DIR$/DDPG_Train.py" />
-        <option value="$PROJECT_DIR$/DDPG_normal.py" />
         <option value="$PROJECT_DIR$/cartpole_test.py" />
         <option value="$PROJECT_DIR$/DDPG_plus.py" />
         <option value="$PROJECT_DIR$/cartpole_plus.py" />
         <option value="$PROJECT_DIR$/DDPG_critic.py" />
         <option value="$PROJECT_DIR$/cartpole_env.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/../SRDDPG/DDPG_test.py" />
         <option value="$PROJECT_DIR$/DDPG_test.py" />
+        <option value="$PROJECT_DIR$/DDPG_normal.py" />
       </list>
     </option>
   </component>
@@ -137,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,15 +188,11 @@
               <item name="DDPG_CARTPOLE" type="b2602c69:ProjectViewProjectNode" />
               <item name="DDPG_CARTPOLE" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DDPG_CARTPOLE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DDPG_CARTPOLE" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,7 +214,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.DDPG_TEST">
+  <component name="RunManager" selected="Python.DDPG_normal">
     <configuration name="Analyse" type="PythonConfigurationType" factoryName="Python">
       <module name="DDPG_CARTPOLE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -310,12 +349,12 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="954" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30586082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31684983" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.49940404" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.47079858" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39928487" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -330,7 +369,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.12210012" />
+      <window_info anchor="right" id="Database" order="4" weight="0.12210012" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,28 +379,21 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DDPG_analyse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DDPG_normal.py">
+    <entry file="file://$PROJECT_DIR$/../SRDDPG/DDPG_normal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2850">
           <caret line="190" column="21" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDPG_plus.py">
+    <entry file="file://$PROJECT_DIR$/../SRDDPG/DDPG_plus.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="110" column="76" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cartpole_test.py">
+    <entry file="file://$PROJECT_DIR$/../SRDDPG/cartpole_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
           <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
@@ -375,7 +407,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cartpole_env.py">
+    <entry file="file://$PROJECT_DIR$/../SRDDPG/cartpole_clean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="100" selection-start-line="100" selection-end-line="102" selection-end-column="53" />
@@ -383,7 +415,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QR.mat" />
-    <entry file="file://$PROJECT_DIR$/cartpole_plus.py">
+    <entry file="file://$PROJECT_DIR$/../SRDDPG/cartpole_uncertainty.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="103" column="57" lean-forward="true" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
@@ -403,12 +435,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDPG_test.py">
+    <entry file="file://$PROJECT_DIR$/../SRDDPG/DDPG_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+        <state relative-caret-position="1890">
+          <caret line="126" column="51" selection-start-line="126" selection-start-column="51" selection-end-line="126" selection-end-column="51" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDPG_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="126" column="51" selection-start-line="126" selection-start-column="51" selection-end-line="126" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDPG_normal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDPG_analyse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="107" column="90" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cartpole_plus.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDPG_plus.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cartpole_env.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

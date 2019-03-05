@@ -15,7 +15,7 @@ LR_A = 0.001    # learning rate for actor
 LR_C = 0.0025    # learning rate for critic
 GAMMA = 0.99    # reward discount
 TAU = 0.01  # soft replacement
-MEMORY_CAPACITY = 50000
+MEMORY_CAPACITY = 500
 BATCH_SIZE = 256
 
 RENDER = True
@@ -145,6 +145,7 @@ for i in range(MAX_EPISODES):
 
         # Add exploration noise
         a = ddpg.choose_action(s)
+        # print('choose_action(s)', time.time() - t1)
         a = np.clip(np.random.normal(a, var), -a_bound, a_bound)    # add randomness to action selection for exploration
         #if var<0.01:
             #a=np.clip(np.random.normal(a, a_bound), -a_bound, a_bound)
@@ -165,7 +166,7 @@ for i in range(MAX_EPISODES):
             EWMA_step[0,i+1]=EWMA_p*EWMA_step[0,i]+(1-EWMA_p)*j
             EWMA_reward[0,i+1]=EWMA_p*EWMA_reward[0,i]+(1-EWMA_p)*ep_reward
             #EWMA[0,i+1]=EWMA[0,i+1]/(1-(EWMA_p **(i+1)))
-            print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var,"good","EWMA_step = ",EWMA_step[0,i+1],"EWMA_reward = ",EWMA_reward[0,i+1],"LR_A = ",LR_A)
+            print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var,"good","EWMA_step = ",EWMA_step[0,i+1],"EWMA_reward = ",EWMA_reward[0,i+1],"LR_A = ",LR_A,'Running time: ', time.time() - t1)
             # print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var, 'EWMA: %.2f' % EWMA[0, i + 1])
             # if ep_reward > -20:RENDER = True # 当 回合总 reward 大于 300 时显示模拟窗口
             #if var <= 0.1:RENDER = True # 当 回合总 reward 大于 300 时显示模拟窗口
@@ -201,10 +202,10 @@ for i in range(MAX_EPISODES):
             #EWMA[0,i+1]=EWMA[0,i+1]/(1-(EWMA_p **(i+1)))
             if hit==1:
                 print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var, "break in : ", j, "due to ",
-                      "hit the wall", "EWMA_step = ", EWMA_step[0, i + 1], "EWMA_reward = ", EWMA_reward[0, i + 1],"LR_A = ",LR_A)
+                      "hit the wall", "EWMA_step = ", EWMA_step[0, i + 1], "EWMA_reward = ", EWMA_reward[0, i + 1],"LR_A = ",LR_A,'Running time: ', time.time() - t1)
             else:
                 print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var, "break in : ", j, "due to",
-                      "fall down","EWMA_step = ", EWMA_step[0, i + 1], "EWMA_reward = ", EWMA_reward[0, i + 1],"LR_A = ",LR_A)
+                      "fall down","EWMA_step = ", EWMA_step[0, i + 1], "EWMA_reward = ", EWMA_reward[0, i + 1],"LR_A = ",LR_A,'Running time: ', time.time() - t1)
             win=0
             break
 

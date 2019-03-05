@@ -1,2 +1,2 @@
-model_checkpoint_path: "cartpole_critic_without_b3.ckpt"
-all_model_checkpoint_paths: "cartpole_critic_without_b3.ckpt"
+model_checkpoint_path: "cartpole_normal.ckpt"
+all_model_checkpoint_paths: "cartpole_normal.ckpt"

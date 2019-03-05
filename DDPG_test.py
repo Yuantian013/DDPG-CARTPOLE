@@ -124,6 +124,7 @@ for i in range(MAX_EPISODES):
 
         # Add exploration noise
         a = ddpg.choose_action(np.random.normal(s, 0.05))
+        print('choose_action(s)', time.time() - t1)
         a = np.clip(np.random.normal(a, var), -a_bound, a_bound)    # add randomness to action selection for exploration
         #if var<0.01:
             #a=np.clip(np.random.normal(a, a_bound), -a_bound, a_bound)
